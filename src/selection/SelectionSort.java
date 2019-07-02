@@ -2,6 +2,10 @@ package selection;
 
 // Sample codes
 // Selection sort: go through the array and select the min of the remainings, swap that with the first
+// N^2 (Quartratic) compares and N (linear) swaps
+// Always go through all the data, every element is put into the final position with one swap (partially sorted
+// array does not matter);
+
 public class SelectionSort  {
 
     public static void sort(Comparable[] a){
