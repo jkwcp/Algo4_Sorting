@@ -1,6 +1,11 @@
 package insertion;
 
-// 1/4N^2 compares and swtiches -- on average
+// 1/4N^2 compares and swtiches -- on average (randomly distributed array
+// Best case: ascending order N - 1 compare 0 exchange
+// Worst case: descending order 1/2 N^2 compares and 1/2 N^2 exchanges
+// Partially sorted:
+//  Example: inversion: pair of keys out of order
+
 public class InsertionSort {
     public static void sort(Comparable[] a) {
         int N = a.length;
