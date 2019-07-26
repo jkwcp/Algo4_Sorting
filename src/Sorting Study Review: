@@ -1,0 +1,103 @@
+Sorting Study Review:
+
+1. Selection sort
+	Move pointer i to the right;
+	find min value to the right;
+	exchange min with a[i]
+
+	inplace, not stable
+	worst:   n^2/2
+	average: n^2/2
+	best:    n^2/2
+	n exchanges
+
+2. Insertion sort
+	Move pointer i to the right
+	Move pointer j from i to the left
+	Compare a[j] with a[j - 1]
+	Exchange if a[j - 1] > a[j], else break
+
+	inplace, stable
+	worst:   n^2/2
+	average: n^2/4
+	best:    n(sorted)
+	used for small n, or partially ordered array
+
+3. Shell sort
+	Insertion sort, but decrease j by h(h > 1, usually h = 3x + 1) : while (h < n/2) h = 3*h + 1;
+
+	inplace, not stable
+	worst:   ? (n^(3/2) with 3x + 1)
+	average: ?
+	best:    n
+
+4. Shuffling
+	Knuth shuffle demo:
+
+		In iteration i, pick r between 0 and i uniformly at random
+		swap [ai] and a[r]
+
+5. Convex hull:
+	Graham scan demo:
+		point p with smallest y- coordinate
+		sort points by polar angle with p
+		consider points in order
+		discard unless it create a ccw turn (counter clockwise turn)
+
+6. Merge sort
+	Basic plan: 
+		divide array into two halves
+		recursively sort each half
+		Merge two halves
+
+	Divide and conquer recurrence
+	Use extra space
+
+	not in place, stable
+	worst:   nlgn
+	average: nlgn
+	best:    nlgn
+
+7. Complexity of sorting
+	
+	Computational complexity: framework to study efficiency of algorithms for solving a particular problem X
+
+	Model of computation: 	Allowable operations
+	Cost model: 			Operation count(s)
+	Upper bound: 
+	Lower bound:
+	Optimal algorithm:      
+
+
+8. QuickSort
+	Shuffle Array (avoid worst case)
+	Partition:
+		a[j] in place
+		no larger entry left to j
+		no smaller entry right to j
+	Sort each piece recursively
+
+	inplace, not stable
+	worst:   n^2/2 (very unlikely because of shuffle)
+	average: 2nlgn
+
+9. Three way qSort
+	let v be partioning item a[lo]
+	Scan i from left to right
+		a[i] < v : exchange a[lt] with a[i], increment both lt and i
+		a[i] > v : exchange a[gt] with a[i], increment gt
+		a[i] == v : increment i 
+	best:    nlgn
+
+10. Quick Select
+	Partion array, get j
+	Repeat in one subarray, until j = k
+
+
+
+Java point:
+	Assertion
+	Callbacks
+	Comparable
+	Comparator
+
